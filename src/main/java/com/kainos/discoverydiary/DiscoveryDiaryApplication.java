@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.resources.HomeResource;
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
@@ -21,6 +22,7 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
                 return config.getViewRendererConfiguration();
             }
         });
+        bootstrap.addBundle(new AssetsBundle("/assets", "/assets"));
     }
 
     public void run(DiscoveryDiaryConfiguration discoveryDiaryConfiguration, Environment environment) throws Exception {
