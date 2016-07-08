@@ -48,6 +48,32 @@
           </filters>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>com.jamierf.dropwizard</groupId>
+        <artifactId>dropwizard-debpkg-maven-plugin</artifactId>
+        <version>0.10</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>dwpackage</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <deb>
+            <name>DiscoveryDiary</name>
+          </deb>
+          <configTemplate>${basedir}/src/DiscoveryDiaryApplicationConfiguration.yml</configTemplate>
+          <jvm>
+            <memory>2g</memory>
+          </jvm>
+          <dropwizard>
+            <httpPort>8080</httpPort>
+            <httpAdminPort>8081</httpAdminPort>
+          </dropwizard>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
