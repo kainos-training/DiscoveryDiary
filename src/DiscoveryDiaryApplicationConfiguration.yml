@@ -6,4 +6,12 @@ server:
   adminConnectors:
     - type: http
       port: 8902
+logging:
+  level: INFO
+
+  appenders:
+    - type: console
+    - type: file
+      currentLogFilename: "{{{path.logDirectory}}}/test.log"
+      archive: false
 
