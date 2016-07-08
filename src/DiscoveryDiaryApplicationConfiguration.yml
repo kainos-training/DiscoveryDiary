@@ -1,0 +1,9 @@
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 8901
+  adminConnectors:
+    - type: http
+      port: 8902
+
