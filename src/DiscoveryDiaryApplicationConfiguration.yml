@@ -12,6 +12,6 @@ logging:
   appenders:
     - type: console
     - type: file
-      currentLogFilename: "{{{path.logDirectory}}}/test.log"
+      currentLogFilename: log/discoverydiary.log
       archive: false
 

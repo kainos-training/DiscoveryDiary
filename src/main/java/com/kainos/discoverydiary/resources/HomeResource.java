@@ -12,11 +12,10 @@ import javax.ws.rs.core.MediaType;
 /**
  * Created by christopherg on 08/07/2016.
  */
-@Path("")
+@Path("home")
 public class HomeResource {
     @GET
     @Timed
-    @Path("")
     @Produces(MediaType.TEXT_HTML)
     public View Index(){
         return new Index();
