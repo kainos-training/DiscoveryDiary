@@ -1,3 +1,4 @@
+<#macro layout>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,8 +8,8 @@
 
     <!-- Bootstrap -->
     <title>Discovery Diary</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/styles.css" rel="stylesheet">
   </head>
   <body>
 
@@ -21,11 +22,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Discovery Diary</a>
+          <a class="navbar-brand" href="/home">Discovery Diary</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="/people">People</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -33,11 +34,9 @@
 
     <div class="container">
 
-      <div class="starter-template">
-        <h1>Discovery Diary Starter application</h1>
-        <p class="lead">You can use this application for getting started on the agile drill.</p>
-      </div>
+      <#nested/>
 
     </div><!-- /.container -->
   </body>
 </html>
+</#macro>
