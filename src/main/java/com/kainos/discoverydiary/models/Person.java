@@ -1,10 +1,22 @@
 package com.kainos.discoverydiary.models;
 
+import java.util.UUID;
+
 public class Person {
+
+	UUID id;
 
 	String name;
 
 	Integer age;
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
 
 	public Integer getAge() {
 		return age;

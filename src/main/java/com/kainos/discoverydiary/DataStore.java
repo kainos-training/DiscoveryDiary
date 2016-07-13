@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.kainos.discoverydiary.models.Person;
 
 import java.util.List;
+import java.util.UUID;
 
 public class DataStore {
 
@@ -13,8 +14,9 @@ public class DataStore {
 		return people;
 	}
 
-	public void registerPerson(String name, Integer age) {
+	public void registerPerson(UUID id, String name, Integer age) {
 		Person newPerson = new Person();
+		newPerson.setId(id);
 		newPerson.setName(name);
 		newPerson.setAge(age);
 		people.add(newPerson);

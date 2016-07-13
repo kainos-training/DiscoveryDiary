@@ -15,3 +15,4 @@ logging:
       currentLogFilename: log/discoverydiary.log
       archive: false
 
+profileImagesFilePath: /Users/davids/testing-practicals/DiscoveryDiary/images
