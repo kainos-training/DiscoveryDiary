@@ -92,15 +92,13 @@ public class PeopleResource {
             imagesPath += "/";
         }
 
+        String profilePictureName = idForNewPerson.toString() + "." + com.google.common.io.Files.getFileExtension(fileMetaData.getFileName());
+        String profileImageUploadPathAndFileName = imagesPath + "/" + profilePictureName;
+
         try {
             Files.createDirectories(Paths.get(imagesPath));
 
-            String profileImageUploadPathAndFileName =
-                    imagesPath +
-                            "/" +
-                            idForNewPerson.toString() +
-                            "." +
-                            com.google.common.io.Files.getFileExtension(fileMetaData.getFileName());
+            LOGGER.info("Profile picture being saved as " + profileImageUploadPathAndFileName);
 
             int read = 0;
             byte[] bytes = new byte[1024];
@@ -117,7 +115,7 @@ public class PeopleResource {
             throw new WebApplicationException("Error while uploading file.");
         }
 
-        dataStore.registerPerson(idForNewPerson, name, age);
+        dataStore.registerPerson(idForNewPerson, name, age, profilePictureName);
 
         URI peopleListUri = UriBuilder.fromUri("/people").build();
         Response response = Response.seeOther(peopleListUri).build();

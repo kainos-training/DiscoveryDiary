@@ -6,6 +6,7 @@ server:
   adminConnectors:
     - type: http
       port: 8902
+
 logging:
   level: INFO
 
@@ -15,4 +16,4 @@ logging:
       currentLogFilename: log/discoverydiary.log
       archive: false
 
-profileImagesFilePath: /Users/davids/testing-practicals/DiscoveryDiary/images
+profileImagesFilePath: profilePics

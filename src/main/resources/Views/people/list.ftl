@@ -10,7 +10,7 @@
     <thead>
         <th>Name</th>
         <th>Age</th>
-
+        <th></th>
     </thead>
 
     <tbody>
@@ -21,6 +21,9 @@
             </td>
             <td>
                 ${person.age}
+            </td>
+            <td>
+                <img src="/profilePics/${person.profilePictureName}" style="max-width: 200px; max-height: 200px" />
             </td>
             </tr>
         </#list>

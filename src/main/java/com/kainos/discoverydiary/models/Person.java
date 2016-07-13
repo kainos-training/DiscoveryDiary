@@ -10,6 +10,8 @@ public class Person {
 
 	Integer age;
 
+	String profilePictureName;
+
 	public UUID getId() {
 		return id;
 	}
@@ -32,5 +34,13 @@ public class Person {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getProfilePictureName() {
+		return profilePictureName;
+	}
+
+	public void setProfilePictureName(String profilePictureName) {
+		this.profilePictureName = profilePictureName;
 	}
 }

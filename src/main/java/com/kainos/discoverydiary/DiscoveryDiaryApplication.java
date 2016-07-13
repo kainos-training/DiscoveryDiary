@@ -1,6 +1,6 @@
 package com.kainos.discoverydiary;
 
-import com.google.common.collect.ImmutableMap;
+import com.github.dirkraft.dropwizard.fileassets.FileAssetsBundle;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.resources.HomeResource;
 import com.kainos.discoverydiary.resources.PeopleResource;
@@ -11,17 +11,12 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
 
-
 public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfiguration> {
     @Override
     public void initialize(Bootstrap<DiscoveryDiaryConfiguration> bootstrap) {
-        bootstrap.addBundle(new ViewBundle<DiscoveryDiaryConfiguration>() {
-            @Override
-            public ImmutableMap<String, ImmutableMap<String, String>> getViewConfiguration(DiscoveryDiaryConfiguration config) {
-                return config.getViewRendererConfiguration();
-            }
-        });
+        bootstrap.addBundle(new ViewBundle<DiscoveryDiaryConfiguration>());
         bootstrap.addBundle(new AssetsBundle("/assets", "/assets"));
+        bootstrap.addBundle(new FileAssetsBundle("profilePics", "/profilePics"));
         bootstrap.addBundle(new MultiPartBundle());
     }
 
