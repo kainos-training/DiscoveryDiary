@@ -31,17 +31,6 @@
         <input name="age" type="number" placeholder="age" class="form-control" required />
     </div>
 
-    <div class="form-group">
-        <label for="profilePicture">Pictures</label>
-        <input name="profilePicture" type="file" accept="image/*" required />
-    </div>
-
-    <div class="form-group">
-        <label for="favoriteFood">Favorite food</label>
-        <select>
-        </select>
-    </div>
-
     <input type="submit" value="Confirm" class="btn btn-primary" />
     <a class="btn btn-default" href="/people">Cancel</a>
 

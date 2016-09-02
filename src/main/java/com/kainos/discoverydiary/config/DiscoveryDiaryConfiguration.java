@@ -11,17 +11,4 @@ public class DiscoveryDiaryConfiguration extends Configuration {
 
     @NotNull
     private ImmutableMap<String, ImmutableMap<String, String>> viewRendererConfiguration = ImmutableMap.of();
-
-    @NotEmpty
-    private String profileImagesFilePath;
-
-    @JsonProperty
-    public String getProfileImagesFilePath() {
-        return profileImagesFilePath;
-    }
-
-    @JsonProperty
-    public void setProfileImagesFilePath(String profileImagesFilePath) {
-        this.profileImagesFilePath = profileImagesFilePath;
-    }
 }

@@ -41,11 +41,6 @@
             <version>${dropwizard.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.github.dirkraft.dropwizard</groupId>
-            <artifactId>dropwizard-file-assets</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>

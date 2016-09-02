@@ -4,13 +4,9 @@ import java.util.UUID;
 
 public class Person {
 
-	UUID id;
-
-	String name;
-
-	Integer age;
-
-	String profilePictureName;
+	private UUID id;
+	private String name;
+	private Integer age;
 
 	public UUID getId() {
 		return id;
@@ -34,13 +30,5 @@ public class Person {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getProfilePictureName() {
-		return profilePictureName;
-	}
-
-	public void setProfilePictureName(String profilePictureName) {
-		this.profilePictureName = profilePictureName;
 	}
 }

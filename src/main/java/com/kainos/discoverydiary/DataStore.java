@@ -14,12 +14,11 @@ public class DataStore {
 		return people;
 	}
 
-	public void registerPerson(UUID id, String name, Integer age, String profilePictureName) {
+	public void registerPerson(UUID id, String name, Integer age) {
 		Person newPerson = new Person();
 		newPerson.setId(id);
 		newPerson.setName(name);
 		newPerson.setAge(age);
-		newPerson.setProfilePictureName(profilePictureName);
 		people.add(newPerson);
 	}
 }

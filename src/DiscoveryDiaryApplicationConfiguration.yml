@@ -15,5 +15,3 @@ logging:
     - type: file
       currentLogFilename: log/discoverydiary.log
       archive: false
-
-profileImagesFilePath: profilePics

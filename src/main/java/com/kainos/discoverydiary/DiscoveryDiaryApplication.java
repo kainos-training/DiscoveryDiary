@@ -1,6 +1,5 @@
 package com.kainos.discoverydiary;
 
-import com.github.dirkraft.dropwizard.fileassets.FileAssetsBundle;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.resources.HomeResource;
 import com.kainos.discoverydiary.resources.PeopleResource;
@@ -16,7 +15,6 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
     public void initialize(Bootstrap<DiscoveryDiaryConfiguration> bootstrap) {
         bootstrap.addBundle(new ViewBundle<DiscoveryDiaryConfiguration>());
         bootstrap.addBundle(new AssetsBundle("/assets", "/assets"));
-        bootstrap.addBundle(new FileAssetsBundle("profilePics", "/profilePics"));
         bootstrap.addBundle(new MultiPartBundle());
     }
 
