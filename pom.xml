@@ -5,7 +5,6 @@
     <modelVersion>4.0.0</modelVersion>
     <properties>
         <dropwizard.version>0.8.5</dropwizard.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <groupId>DiscoveryDiary</groupId>
     <artifactId>DiscoveryDiary</artifactId>
@@ -101,61 +100,33 @@
             </executions>
         </plugin>
         <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>rpm-maven-plugin</artifactId>
-            <version>2.1.5</version>
+            <groupId>com.jamierf.dropwizard</groupId>
+            <artifactId>dropwizard-debpkg-maven-plugin</artifactId>
+            <version>0.10</version>
+            <configuration>
+                <deb>
+                    <name>DiscoveryDiary</name>
+                </deb>
+                <configTemplate>${basedir}/src/DiscoveryDiaryApplicationConfiguration.yml</configTemplate>
+                <jvm>
+                    <memory>2g</memory>
+                </jvm>
+                <dropwizard>
+                    <httpPort>8080</httpPort>
+                    <httpAdminPort>8081</httpAdminPort>
+                </dropwizard>
+                <path>
+                    <logDirectory>/var/log/${project.artifactId}</logDirectory>
+                </path>
+            </configuration>
             <executions>
                 <execution>
-                    <id>generate-rpm</id>
+                    <phase>package</phase>
                     <goals>
-                        <goal>rpm</goal>
+                        <goal>dwpackage</goal>
                     </goals>
                 </execution>
             </executions>
-            <configuration>
-                <license>GPL (c) 2005, SWWDC</license>
-                <distribution>Trash 2005</distribution>
-                <group>Application/Collectors</group>
-                <packager>SWWDC</packager>
-                <prefix>/usr/local</prefix>
-                <changelogFile>src/changelog</changelogFile>
-                <needarch>noarch</needarch>
-                <targetOS>linux</targetOS>
-                <defineStatements>
-                    <defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
-                </defineStatements>
-                <mappings>
-                    <mapping>
-                        <directory>/usr/local/drill/lib</directory>
-                        <configuration>true</configuration>
-                        <filemode>644</filemode>
-                        <username>vagrant</username>
-                        <groupname>vagrant</groupname>
-                        <sources>
-                            <source>
-                                <location>src/</location>
-                                <includes>
-                                    <include>*.yml</include>
-                                </includes>
-                            </source>
-                        </sources>
-                    </mapping>
-                    <mapping>
-                        <directory>/usr/local/drill/lib</directory>
-                        <filemode>777</filemode>
-                        <username>vagrant</username>
-                        <groupname>vagrant</groupname>
-                        <sources>
-                            <source>
-                                <location>target/</location>
-                                <includes>
-                                    <include>DiscoveryDiary-1.jar</include>
-                                </includes>
-                            </source>
-                        </sources>
-                    </mapping>
-                </mappings>
-            </configuration>
         </plugin>
     </plugins>
     </build>
