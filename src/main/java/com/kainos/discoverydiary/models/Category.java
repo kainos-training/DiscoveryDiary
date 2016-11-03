@@ -1,12 +1,23 @@
 package com.kainos.discoverydiary.models;
 
-/**
- * Created by benl on 03/11/2016.
- */
 public enum Category {
 
-        TECHNICAL,
-        NON_TECHNICAL;
+    TECHNICAL("Technical"),
+    NON_TECHNICAL("Non Technical");
 
+    private final String name;
+
+    private Category(String name) {
+        this.name = name;
     }
+
+    public boolean equalsName(String otherName) {
+        return (otherName == null) ? false : name.equals(otherName);
+    }
+
+    public String toString() {
+        return this.name;
+    }
+
+}
 
