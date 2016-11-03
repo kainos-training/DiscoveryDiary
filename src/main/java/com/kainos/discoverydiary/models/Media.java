@@ -12,6 +12,8 @@ public class Media {
     private String description;
     private Category category;
     private String publicationDate;
+    private String nameOfBorrower;
+    private Status status;
 
     private static int count = 0;
 
@@ -24,6 +26,20 @@ public class Media {
         this.description = description;
         this.category = category;
         this.publicationDate = publicationDate;
+        this.status = Status.AVAILABLE;
+    }
+
+    public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status) {
+
+        count++;
+        this.id = count;
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.category = category;
+        this.publicationDate = publicationDate;
+        this.nameOfBorrower = nameOfBorrower;
+        this.status = status;
     }
 
     public int getId() {
@@ -49,4 +65,14 @@ public class Media {
     public String getPublicationDate() {
         return publicationDate;
     }
+
+
+    public String getNameOfBorrower() {
+        return nameOfBorrower;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
 }

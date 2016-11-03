@@ -22,6 +22,13 @@
         <dd>
             ${media.publicationDate}
         </dd>
+        <dt>Status</dt>
+        <dd>${media.status}
+        </dd>
+        <#if media.status == "On Loan">
+        <dt>Loanee</dt>
+        <dd>${media.nameOfBorrower}</dd>
+        </#if>
 </dl>
 
 </@layoutTemplate.layout>
