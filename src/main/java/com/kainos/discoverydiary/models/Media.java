@@ -13,15 +13,12 @@ public class Media {
     private Category category;
     private String publicationDate;
 
-    public static ArrayList<Media> medias = new ArrayList<Media>();
     private static int count = 0;
 
     public Media(String title, String author, String description, Category category, String publicationDate) {
 
         count++;
         this.id = count;
-        medias.add(this);
-
         this.title = title;
         this.author = author;
         this.description = description;

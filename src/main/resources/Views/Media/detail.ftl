@@ -5,35 +5,23 @@
 
 <h1>${media.title}</h1>
 
-<table class="table">
-    <thead>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Description</th>
-        <th>Category</th>
-        <th>Publication Date</th>
-    </thead>
-
-    <tbody>
-            <tr>
-            <td>
-                ${media.title}
-            </td>
-            <td>
-                ${media.author}
-            </td>
-            <td>
-                ${media.description}
-            </td>
-            <td>
-                ${media.category}
-            </td>
-            <td>
-                ${media.publicationDate}
-            </td>
-            </tr>
-
-    </tbody>
-</table>
+<dl class="table">
+        <dt>Author</dt>
+        <dd>
+            ${media.author}
+        </dd>
+        <dt>Description</dt>
+        <dd>
+            ${media.description}
+        </dd>
+        <dt>Category</dt>
+        <dd>
+           ${media.category}
+        </dd>
+        <dt>Publication Date</dt>
+        <dd>
+            ${media.publicationDate}
+        </dd>
+</dl>
 
 </@layoutTemplate.layout>

@@ -7,8 +7,8 @@ public enum Category {
 
     private final String name;
 
-    private Category(String s) {
-        name = s;
+    private Category(String name) {
+        this.name = name;
     }
 
     public boolean equalsName(String otherName) {
