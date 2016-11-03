@@ -8,29 +8,29 @@
 
     <!-- Bootstrap -->
     <title>Discovery Diary</title>
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/styles.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   </head>
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/home">Discovery Diary</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/people">People</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+<nav>
+   <div class="nav-wrapper" style="background: #FFFFFF">
+     <img src="http://mediaserver.dwpub.com/newsroom-logo/tb_lrg/70801/Kainos-Logo+2.png" class="brand-logo left" alt="Kainos Logo" height="75">
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+<form>
+       <div class="input-field">
+         <input id="search" type="search" required>
+         <label for="search"><i class="material-icons">search</i></label>
+         <i class="material-icons">close</i>
+       </div>
+     </form>
+
+     </ul>
+   </div>
+ </nav>
 
     <div class="container">
 
