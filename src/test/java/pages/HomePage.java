@@ -10,7 +10,7 @@ public class HomePage {
 
     public static void goTo() {
         driver = Driver.instance();
-        driver.get("http://google.com");
+        driver.get("http://localhost:8901/");
     }
 
     public static boolean isPageLoaded() {
