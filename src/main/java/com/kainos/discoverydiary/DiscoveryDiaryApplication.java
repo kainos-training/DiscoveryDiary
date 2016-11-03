@@ -1,8 +1,9 @@
 package com.kainos.discoverydiary;
 
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
-import com.kainos.discoverydiary.resources.HomeResource;
-import com.kainos.discoverydiary.resources.PeopleResource;
+import com.kainos.discoverydiary.models.Category;
+import com.kainos.discoverydiary.models.Media;
+import com.kainos.discoverydiary.resources.MediaResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.forms.MultiPartBundle;
@@ -19,14 +20,20 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
     }
 
     public void run(DiscoveryDiaryConfiguration discoveryDiaryConfiguration, Environment environment) throws Exception {
-        final HomeResource homeResource = new HomeResource();
-        final PeopleResource peopleResource = new PeopleResource(new DataStore(), discoveryDiaryConfiguration);
+        final MediaResource mediaResource = new MediaResource();
 
-        environment.jersey().register(homeResource);
-        environment.jersey().register(peopleResource);
+        environment.jersey().register(mediaResource);
+        addDummyData();
     }
 
     public static void main(String[] args) throws Exception {
         new DiscoveryDiaryApplication().run(args);
+    }
+
+    public static void addDummyData() {
+        DataStore.medias.add(new Media("Java For Dummies", "J K Bowling", "Training book on java", Category.TECHNICAL, "2001"));
+        DataStore.medias.add(new Media("How to HTML", "J K Bowling", "Training book on html", Category.TECHNICAL, "2000"));
+        DataStore.medias.add(new Media("CSS: What's that?", "J K Bowling", "Training book on css", Category.TECHNICAL, "2011"));
+        DataStore.medias.add(new Media("From beginner to chess master in 10mins", "J K Bowling", "Training book on chess", Category.NON_TECHNICAL, "1980"));
     }
 }
