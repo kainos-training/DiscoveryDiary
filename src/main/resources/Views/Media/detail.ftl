@@ -1,4 +1,3 @@
-
 <#import "../layout.ftl" as layoutTemplate>
 
 <@layoutTemplate.layout>
@@ -28,8 +27,9 @@
         <#if media.status == "On Loan">
         <dt>Loanee</dt>
         <dd>${media.nameOfBorrower}</dd>
+        </#if>
         <#if media.status == "Available">
-        <form method="post">
+        <form action="${media.id}/borrow" method="post">
             <label for="nameOfBorrower">Name: </label>
             <input id="nameOfBorrower" type="text" name="nameOfBorrower">
             <input type="submit" name="Borrow">
