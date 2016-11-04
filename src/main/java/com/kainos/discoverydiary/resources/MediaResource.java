@@ -12,11 +12,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by benl on 03/11/2016.
- */
 @Path("media")
 public class MediaResource {
 
@@ -24,12 +22,9 @@ public class MediaResource {
     @Timed
     @Produces(MediaType.TEXT_HTML)
     public View Homepage() {
-
-        List<Media> medias = DataStore.medias;
-
+        List<Media> medias = new ArrayList<Media>(DataStore.media.values());
         return new Homepage(medias);
     }
-
 
 
     @GET
@@ -37,7 +32,8 @@ public class MediaResource {
     @Path("{id}")
     @Produces(MediaType.TEXT_HTML)
     public View Detail(@PathParam("id") int id) {
-        return new Detail(DataStore.medias.get(id));
+
+        return new Detail(DataStore.media.get(id));
     }
 }
 

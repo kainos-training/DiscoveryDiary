@@ -1,22 +1,20 @@
 package com.kainos.discoverydiary.models;
 
-import java.util.ArrayList;
-
 /**
  * Created by benl on 03/11/2016.
  */
-public class Media {
+public class Media  implements Comparable<Media> {
 
     private String title;
     private String author;
     private String description;
     private Category category;
-    private int publicationDate;
+    private String publicationDate;
     private String imageUrl;
 
     private static int count = 0;
 
-    public Media(String title, String author, String description, Category category, int publicationDate, String imageUrl) {
+    public Media(String title, String author, String description, Category category, String publicationDate, String imageUrl) {
 
         count++;
         this.id = count;
@@ -51,7 +49,7 @@ public class Media {
         return category;
     }
 
-    public int getPublicationDate() {
+    public String getPublicationDate() {
         return publicationDate;
     }
 
@@ -64,6 +62,9 @@ public class Media {
     }
 
 
-
+    @Override
+    public int compareTo(Media o) {
+        return  this.title.compareTo(o.title);
+    }
 }
 

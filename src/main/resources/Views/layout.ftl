@@ -9,29 +9,29 @@
     <!-- Bootstrap -->
 
     <title>Kainos Media Library</title>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+      <!-- Bootstrap core CSS -->
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+         <link href="/assets/css/layout.css" rel="stylesheet">
+         <link href="/assets/css/responsive.css" rel="stylesheet">
+         <link href="/assets/fonts/fonts.css" rel="stylesheet">
+
+
   </head>
   <body>
 
-<nav>
-   <div class="nav-wrapper" style="background: #FFFFFF">
-     <img src="http://mediaserver.dwpub.com/newsroom-logo/tb_lrg/70801/Kainos-Logo+2.png" class="brand-logo left" alt="Kainos Logo" height="75">
-     <ul id="nav-mobile" class="right hide-on-med-and-down">
+	<header>
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-lg-4 col-sm-4 col-md-4 logo" >
+                	<a href="#"><img src="/assets/images/logo.png" alt="logo" height="75" style="padding:20px"></a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<form>
-       <div class="input-field">
-         <input id="search" type="search" required>
-         <label for="search"><i class="material-icons">search</i></label>
-         <i class="material-icons">close</i>
-       </div>
-     </form>
 
-     </ul>
-   </div>
- </nav>
 
     <div class="container">
 

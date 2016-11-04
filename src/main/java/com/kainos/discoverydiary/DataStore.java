@@ -2,10 +2,12 @@ package com.kainos.discoverydiary;
 
 import com.kainos.discoverydiary.models.Media;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DataStore {
 
-	public static ArrayList<Media> medias = new ArrayList<Media>();
+
+	public static Map<Integer, Media> media = new HashMap<>();
 
 }

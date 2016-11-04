@@ -3,31 +3,30 @@
 <#import "../layout.ftl" as layoutTemplate>
 
 <@layoutTemplate.layout>
-<div class="row">
- <#list medias as media>
+    <section class="main-content-area">
+        	<div class="container">
+            	<div class="row">
 
-
-
-<div class="col s12 m6 l4">
+         <#list medias as media>
 <a href="/media/${media.id}">
-            <div class="card">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="${media.imageUrl}">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">${media.title}</span>
 
+<div class="col-lg-3 col-md-6 col-sm-6">
 
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">${media.title}</span>
+                 	<div class="box-inner">
+                    	<div class="img-con">
+                         <img src="${media.imageUrl}">
+                        </div>
+                        <div class="details-area">
+                        	<h1><a href="#">${media.title}</a></h1>
 
-              </div>
-            </div>
-          </div>
-          </a>
+                        </div>
+                    </div>
+                 </div>
+</a>
+
 
            </#list>
+           </div>
            </div>
 
 
