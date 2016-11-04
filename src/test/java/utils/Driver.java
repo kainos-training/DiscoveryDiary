@@ -1,7 +1,9 @@
 package utils;
 
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.MarionetteDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Driver {
@@ -9,8 +11,8 @@ public class Driver {
 
     public static WebDriver initialise() {
         if (null == driver){
-            MarionetteDriverManager.getInstance().setup();
-            driver = new FirefoxDriver();
+            ChromeDriverManager.getInstance().setup();
+            driver = new ChromeDriver();
             return driver;
         }
         return driver;
