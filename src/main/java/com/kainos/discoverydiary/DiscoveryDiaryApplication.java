@@ -12,6 +12,8 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
 
+import javax.xml.crypto.Data;
+
 public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfiguration> {
     @Override
     public void initialize(Bootstrap<DiscoveryDiaryConfiguration> bootstrap) {
@@ -32,6 +34,7 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
     }
 
     public static void addDummyData() {
+
         DataStore.medias.add(new Media("Java For Dummies", "J K Bowling", "Training book on java", Category.TECHNICAL, "2001"));
         DataStore.medias.add(new Media("How to HTML", "J K Bowling", "Training book on html", Category.TECHNICAL, "2000"));
         DataStore.medias.add(new Media("CSS: What's that?", "J K Bowling", "Training book on css", Category.TECHNICAL, "2011"));
