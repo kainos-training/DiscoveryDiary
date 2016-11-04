@@ -17,7 +17,7 @@ import java.util.List;
     private int bookCount;
 
     public Homepage(List<Media> medias) {
-        super("/Views/media/homepage.ftl");
+        super("/Views/Media/homepage.ftl");
         this.medias = medias;
 
     }
