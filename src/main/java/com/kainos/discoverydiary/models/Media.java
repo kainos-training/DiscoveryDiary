@@ -1,7 +1,6 @@
 package com.kainos.discoverydiary.models;
 
 import org.joda.time.DateTime;
-
 import java.util.ArrayList;
 
 public class Media {
@@ -12,10 +11,19 @@ public class Media {
     private String description;
     private Category category;
     private String publicationDate;
+    private String nameOfBorrower;
+    private Status status;
 
     private static int count = 0;
 
-    public Media(String title, String author, String description, Category category, String publicationDate) {
+    public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status) {
+        this(title, author, description, category, publicationDate);
+        this.nameOfBorrower = nameOfBorrower;
+        this.status = status;
+    }
+
+
+    public Media(String title, String author, String description, Category category, String publicationDate){
 
         count++;
         this.id = count;
@@ -24,6 +32,7 @@ public class Media {
         this.description = description;
         this.category = category;
         this.publicationDate = publicationDate;
+        this.status = Status.AVAILABLE;
     }
 
     public int getId() {
@@ -49,4 +58,13 @@ public class Media {
     public String getPublicationDate() {
         return publicationDate;
     }
+
+    public String getNameOfBorrower() {
+        return nameOfBorrower;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
 }
