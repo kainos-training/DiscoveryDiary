@@ -1,7 +1,4 @@
 /target/*
 /.idea/*
 *.log
-.idea/
-log/
-target/
 DiscoveryDiary.iml
