@@ -34,11 +34,13 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
     }
 
     public static void addDummyData() {
-        DataStore.medias.add(new Media("Java For Dummies", "J K Bowling", "Training book on java", Category.TECHNICAL, "2001"));
-        DataStore.medias.add(new Media("How to HTML", "J K Bowling", "Training book on html", Category.TECHNICAL, "2000"));
-        DataStore.medias.add(new Media("CSS: What's that?", "J K Bowling", "Training book on css", Category.TECHNICAL, "2011"));
-        DataStore.medias.add(new Media("From beginner to chess master in 10mins", "J K Bowling", "Training book on chess", Category.NON_TECHNICAL, "1980"));
-        DataStore.medias.add(new Media("The ins and outs of Ruby on Rails", "Mail Serrif", "Training book on Ruby", Category.TECHNICAL, "1980", "Sean", Status.ON_LOAN));
-        DataStore.medias.add(new Media("The Big Book of Java", "Stephen Hawking", "Training book on Java", Category.TECHNICAL, "1980", null, Status.IN_DISREPAIR));
+        addMedia(new Media("Java For Dummies", "J K Bowling", "Training book on java", Category.TECHNICAL, "2001"));
+        addMedia(new Media("How to HTML", "J K Bowling", "Training book on html", Category.TECHNICAL, "2000"));
+        addMedia(new Media("CSS: What's that?", "J K Bowling", "Training book on css", Category.TECHNICAL, "2011"));
+        addMedia(new Media("From beginner to chess master in 10mins", "J K Bowling", "Training book on chess", Category.NON_TECHNICAL, "1980"));
+    }
+
+    public static void addMedia(Media media) {
+        DataStore.medias.put(media.getId(), media);
     }
 }
