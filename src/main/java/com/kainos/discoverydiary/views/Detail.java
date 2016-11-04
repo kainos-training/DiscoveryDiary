@@ -8,7 +8,7 @@ public class Detail extends View {
     private Media media;
 
     public Detail(Media media){
-        super("/Views/media/detail.ftl");
+        super("/Views/Media/detail.ftl");
         this.media = media;
     }
 
