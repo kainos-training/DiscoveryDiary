@@ -8,6 +8,6 @@ import java.util.Map;
 public class DataStore {
 
 
-	public static Map<Integer, Media> media = new HashMap<>();
+	public static Map<Integer, Media> medias = new HashMap<>();
 
 }

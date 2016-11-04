@@ -22,7 +22,7 @@ public class MediaResource {
     @Timed
     @Produces(MediaType.TEXT_HTML)
     public View Homepage() {
-        List<Media> medias = new ArrayList<Media>(DataStore.media.values());
+        List<Media> medias = new ArrayList<Media>(DataStore.medias.values());
         return new Homepage(medias);
     }
 
@@ -33,7 +33,7 @@ public class MediaResource {
     @Produces(MediaType.TEXT_HTML)
     public View Detail(@PathParam("id") int id) {
 
-        return new Detail(DataStore.media.get(id));
+        return new Detail(DataStore.medias.get(id));
     }
 }
 
