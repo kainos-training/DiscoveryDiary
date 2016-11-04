@@ -12,8 +12,6 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
 
-import javax.ws.rs.core.Response;
-
 public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfiguration> {
     @Override
     public void initialize(Bootstrap<DiscoveryDiaryConfiguration> bootstrap) {
