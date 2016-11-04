@@ -2,6 +2,8 @@ package com.kainos.discoverydiary.resources;
 
 import com.codahale.metrics.annotation.Timed;
 import com.kainos.discoverydiary.DataStore;
+import com.kainos.discoverydiary.models.Media;
+import com.kainos.discoverydiary.models.Status;
 import com.kainos.discoverydiary.views.Detail;
 import io.dropwizard.views.View;
 
@@ -22,5 +24,20 @@ public class MediaResource {
     @Produces(MediaType.TEXT_HTML)
     public View Detail(@PathParam("id") int id) {
         return new Detail(DataStore.medias.get(id));
+    }
+
+    @POST
+    @Timed
+    @Path("{id}")
+    public View Borrow(@PathParam("id") int id, @FormParam("nameOfBorrower") String nameOfBorrower) {
+
+        Media media = DataStore.medias.get(id);
+
+        if (media.getStatus() == Status.AVAILABLE) {
+            media.setNameOfBorrower(nameOfBorrower);
+            media.setStatus(Status.ON_LOAN);
+        }
+
+        return Detail(id);
     }
 }

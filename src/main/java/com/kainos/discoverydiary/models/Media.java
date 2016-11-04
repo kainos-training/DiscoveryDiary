@@ -75,4 +75,12 @@ public class Media {
         return status;
     }
 
+    public void setNameOfBorrower(String nameOfBorrower) {
+        this.nameOfBorrower = nameOfBorrower;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
 }
