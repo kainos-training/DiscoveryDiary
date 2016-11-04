@@ -1,9 +1,11 @@
 package com.kainos.discoverydiary.models;
 
-import org.joda.time.DateTime;
-import java.util.ArrayList;
+/**
+ * Created by benl on 03/11/2016.
+ */
+public class Media  implements Comparable<Media> {
 
-public class Media {
+
 
     private int id;
     private String title;
@@ -11,19 +13,21 @@ public class Media {
     private String description;
     private Category category;
     private String publicationDate;
+    private String imageUrl;
     private String nameOfBorrower;
     private Status status;
 
     private static int count = 0;
 
-    public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status) {
-        this(title, author, description, category, publicationDate);
+
+    public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status, String imageUrl) {
+        this(title, author, description, category, publicationDate, imageUrl);
         this.nameOfBorrower = nameOfBorrower;
         this.status = status;
     }
 
 
-    public Media(String title, String author, String description, Category category, String publicationDate){
+    public Media(String title, String author, String description, Category category, String publicationDate, String imageUrl){
 
         count++;
         this.id = count;
@@ -32,11 +36,15 @@ public class Media {
         this.description = description;
         this.category = category;
         this.publicationDate = publicationDate;
+        this.imageUrl = imageUrl;
+
         this.status = Status.AVAILABLE;
+
     }
 
+
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public String getTitle() {
@@ -59,6 +67,21 @@ public class Media {
         return publicationDate;
     }
 
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+
+    @Override
+    public int compareTo(Media o) {
+        return  this.title.compareTo(o.title);
+    }
+
     public String getNameOfBorrower() {
         return nameOfBorrower;
     }
@@ -67,4 +90,6 @@ public class Media {
         return status;
     }
 
+
 }
+
