@@ -5,18 +5,24 @@ import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.models.Media;
 import com.kainos.discoverydiary.models.Status;
 import com.kainos.discoverydiary.views.Detail;
+import com.kainos.discoverydiary.views.Homepage;
 import io.dropwizard.views.View;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 @Path("media")
 public class MediaResource {
 
-    public MediaResource() {
-        //Dummy Data
-
+    @GET
+    @Timed
+    @Produces(MediaType.TEXT_HTML)
+    public View Homepage() {
+        List<Media> medias = new ArrayList<Media>(DataStore.medias.values());
+        return new Homepage(medias);
     }
 
     @GET
@@ -30,7 +36,7 @@ public class MediaResource {
     @POST
     @Timed
     @Path("{id}/borrow")
-    public Response Borrow(@PathParam("id") int id, @FormParam("nameOfBorrower") String nameOfBorrower) {
+    public Response Borrow(@PathParam("id") int id, @FormParam("nameOfBorrower") String nameOfBorrower) throws Exception {
 
         Media media = DataStore.medias.get(id);
 
@@ -39,6 +45,6 @@ public class MediaResource {
             media.setStatus(Status.ON_LOAN);
         }
 
-        return Response.ok().entity(Detail(id)).build();
+        return Response.seeOther(new URI("/media/" + id)).entity(Detail(id)).build();
     }
 }
